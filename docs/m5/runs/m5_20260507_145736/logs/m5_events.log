@@ -1,0 +1,4 @@
+run_id=m5_20260507_145736
+command=.\tools\m5_long_run.py --duration-s 14400 --can-interface gs_usb --channel 0 --bitrate 500000
+interrupted by user
+report written: LOCAL_USER_HOME\Desktop\雷达\LADAR2\docs\m5\runs\m5_20260507_145736\m5_long_run_report.md

@@ -1,0 +1,8 @@
+csv_path=LOCAL_USER_HOME\Desktop\雷达\LADAR2\docs\m6\runs\m6_manual\data\wall_02.csv
+generated_at=2026-05-10T15:51:46
+reassembly_ok_point_cnt=2855
+reassembly_timeout_point_cnt=1
+reassembly_overwrite_a_cnt=0
+reassembly_overwrite_b_cnt=0
+pending_frame_cnt=0
+reassembly_timeout_ms=50

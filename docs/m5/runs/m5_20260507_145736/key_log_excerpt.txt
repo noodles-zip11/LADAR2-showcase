@@ -1,0 +1,7 @@
+run_id=m5_20260507_145736
+total_points=612466
+point_refresh_rate_hz=100.147
+reassembly_loss_events=7
+reassembly_loss_rate=0.001143%
+rpm_mean=9.026
+rpm_std=1.485

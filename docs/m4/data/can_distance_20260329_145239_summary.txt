@@ -1,0 +1,8 @@
+csv_path=LOCAL_HOME_1/M4/can_distance_20260329_145239.csv
+generated_at=2026-03-29T14:52:59
+reassembly_ok_point_cnt=1958
+reassembly_timeout_point_cnt=0
+reassembly_overwrite_a_cnt=0
+reassembly_overwrite_b_cnt=0
+pending_frame_cnt=0
+reassembly_timeout_ms=50

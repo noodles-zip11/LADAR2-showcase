@@ -1,0 +1,15 @@
+lidar/01/status {"device_id": "lidar-01", "state": "offline"}
+lidar/01/status {"device_id": "lidar-01", "state": "offline"}
+lidar/01/status {"device_id": "lidar-01", "state": "online", "mode": "live", "version": "1.0.0", "ts": 1777979449117}
+lidar/01/telemetry {"device_id": "lidar-01", "mode": "live", "ts": 1777979449418, "point_count": 42, "sweep_point_count": 18, "min_distance_cm": 15, "min_distance_angle_deg": 90.5, "latest_quality": 12, "latest_status": 0, "reassembly": {"ok": 100, "timeout": 0, "overwrite_a": 0, "overwrite_b": 0, "pending": 0}}
+lidar/01/status {"device_id": "lidar-01", "state": "offline"}
+lidar/01/status {"device_id": "lidar-01", "state": "offline"}
+lidar/01/cmd {"cmd":"ping","req_id":"s01"}
+lidar/01/status {"device_id": "lidar-01", "state": "offline"}
+lidar/01/cmd {"cmd":"ping","req_id":"s02"}
+lidar/01/status {"device_id": "lidar-01", "state": "offline"}
+lidar/01/status {"device_id": "lidar-01", "state": "offline"}
+lidar/01/status {"device_id": "lidar-01", "state": "offline"}
+lidar/01/status {"device_id": "lidar-01", "state": "offline"}
+lidar/01/status {"device_id": "lidar-01", "state": "offline"}
+lidar/01/status {"device_id": "lidar-01", "state": "offline"}

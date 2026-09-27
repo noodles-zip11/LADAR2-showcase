@@ -1,0 +1,62 @@
+[LOG] mode=replay  points=8  sweep=8  min_dist=63cm  alarm=OK
+  Front  pts=   8  min=  63cm  alert=OK
+  Right  pts=   0  min=     —  alert=OK
+  Rear   pts=   0  min=     —  alert=OK
+  Left   pts=   0  min=     —  alert=OK
+MQTT cmd: cmd=ping req_id=manual_ping result=OK
+[LOG] mode=replay  points=8  sweep=8  min_dist=63cm  alarm=OK
+  Front  pts=   8  min=  63cm  alert=OK
+  Right  pts=   0  min=     —  alert=OK
+  Rear   pts=   0  min=     —  alert=OK
+  Left   pts=   0  min=     —  alert=OK
+[LOG] mode=replay  points=8  sweep=8  min_dist=63cm  alarm=OK
+  Front  pts=   8  min=  63cm  alert=OK
+  Right  pts=   0  min=     —  alert=OK
+  Rear   pts=   0  min=     —  alert=OK
+  Left   pts=   0  min=     —  alert=OK
+[LOG] mode=replay  points=8  sweep=8  min_dist=63cm  alarm=OK
+  Front  pts=   8  min=  63cm  alert=OK
+  Right  pts=   0  min=     —  alert=OK
+  Rear   pts=   0  min=     —  alert=OK
+  Left   pts=   0  min=     —  alert=OK
+[LOG] mode=replay  points=8  sweep=8  min_dist=63cm  alarm=OK
+  Front  pts=   8  min=  63cm  alert=OK
+  Right  pts=   0  min=     —  alert=OK
+  Rear   pts=   0  min=     —  alert=OK
+  Left   pts=   0  min=     —  alert=OK
+[LOG] mode=replay  points=8  sweep=8  min_dist=63cm  alarm=OK
+  Front  pts=   8  min=  63cm  alert=OK
+  Right  pts=   0  min=     —  alert=OK
+  Rear   pts=   0  min=     —  alert=OK
+  Left   pts=   0  min=     —  alert=OK
+[LOG] mode=replay  points=8  sweep=8  min_dist=63cm  alarm=OK
+  Front  pts=   8  min=  63cm  alert=OK
+  Right  pts=   0  min=     —  alert=OK
+  Rear   pts=   0  min=     —  alert=OK
+  Left   pts=   0  min=     —  alert=OK
+[LOG] mode=replay  points=8  sweep=8  min_dist=63cm  alarm=OK
+  Front  pts=   8  min=  63cm  alert=OK
+  Right  pts=   0  min=     —  alert=OK
+  Rear   pts=   0  min=     —  alert=OK
+  Left   pts=   0  min=     —  alert=OK
+[LOG] mode=replay  points=8  sweep=8  min_dist=63cm  alarm=OK
+  Front  pts=   8  min=  63cm  alert=OK
+  Right  pts=   0  min=     —  alert=OK
+  Rear   pts=   0  min=     —  alert=OK
+  Left   pts=   0  min=     —  alert=OK
+[LOG] mode=replay  points=8  sweep=8  min_dist=63cm  alarm=OK
+  Front  pts=   8  min=  63cm  alert=OK
+  Right  pts=   0  min=     —  alert=OK
+  Rear   pts=   0  min=     —  alert=OK
+  Left   pts=   0  min=     —  alert=OK
+[LOG] mode=replay  points=8  sweep=8  min_dist=63cm  alarm=OK
+  Front  pts=   8  min=  63cm  alert=OK
+  Right  pts=   0  min=     —  alert=OK
+  Rear   pts=   0  min=     —  alert=OK
+  Left   pts=   0  min=     —  alert=OK
+[LOG] mode=replay  points=8  sweep=8  min_dist=63cm  alarm=OK
+  Front  pts=   8  min=  63cm  alert=OK
+  Right  pts=   0  min=     —  alert=OK
+  Rear   pts=   0  min=     —  alert=OK
+  Left   pts=   0  min=     —  alert=OK
+MQTT cmd: cmd=reboot req_id=manual_bad result=REJECTED unknown_command

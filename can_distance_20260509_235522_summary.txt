@@ -1,0 +1,8 @@
+csv_path=LOCAL_USER_HOME\Desktop\雷达\LADAR2\can_distance_20260509_235522.csv
+generated_at=2026-05-09T23:56:12
+reassembly_ok_point_cnt=0
+reassembly_timeout_point_cnt=0
+reassembly_overwrite_a_cnt=0
+reassembly_overwrite_b_cnt=0
+pending_frame_cnt=0
+reassembly_timeout_ms=50

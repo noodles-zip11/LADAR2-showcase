@@ -1,0 +1,8 @@
+csv_path=docs/m4/data/can_distance_v2_sample.csv
+generated_at=2026-03-29T12:00:00
+reassembly_ok_point_cnt=8
+reassembly_timeout_point_cnt=0
+reassembly_overwrite_a_cnt=0
+reassembly_overwrite_b_cnt=0
+pending_frame_cnt=0
+reassembly_timeout_ms=50

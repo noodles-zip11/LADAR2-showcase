@@ -1,0 +1,14 @@
+MQTT 烟雾测试 — broker=localhost:1883 client_id=ladar2_smoke_test
+
+[OK] 已连接 MQTT broker (rc=0)
+[PUB] status → lidar/01/status: {"device_id": "lidar-01", "state": "online", "mode": "live", "version": "1.0.0", "ts": 1777979449117}
+[SUB] 已订阅 lidar/01/cmd
+[PUB] 消息已确认 mid=1
+[PUB] telemetry → lidar/01/telemetry: {"device_id": "lidar-01", "mode": "live", "ts": 1777979449418, "point_count": 42, "sweep_point_count": 18, "min_distance_cm": 15, "min_distance_angle_deg": 90.5, "latest_quality": 12, "latest_status": 0, "reassembly": {"ok": 100, "timeout": 0, "overwrite_a": 0, "overwrite_b": 0, "pending": 0}}
+
+================================================================
+  最小闭环已就绪。请在另一个终端发送命令验证:
+    mosquitto_pub -t 'lidar/01/cmd' -m '{"cmd":"ping"}' -q 1
+================================================================
+
+等待命令中... (Ctrl+C 退出)

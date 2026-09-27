@@ -1,0 +1,3 @@
+run_id=m5_20260507_144251
+command=.\tools\m5_long_run.py --input-csv .\docs\m4\data\can_distance_v2_sample.csv --duration-s 0
+offline report written: LOCAL_USER_HOME\Desktop\雷达\LADAR2\docs\m5\runs\m5_20260507_144251\m5_long_run_report.md

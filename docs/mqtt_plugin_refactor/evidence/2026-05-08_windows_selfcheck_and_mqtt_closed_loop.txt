@@ -1,0 +1,178 @@
+PS LOCAL_USER_HOME\Desktop\雷达\LADAR2> powershell -ExecutionPolicy Bypass -File .\tools\selfcheck_all.ps1
+>>> cmake --build --preset Debug
+ninja: no work to do.
+>>> python -m py_compile can_recv4.py
+>>> python -m py_compile can_parser.py
+>>> python -m py_compile can_input.py
+>>> python -m py_compile can_core.py
+>>> python -m py_compile can_output.py
+>>> python -m py_compile can_mqtt.py
+>>> python -m py_compile mqtt_smoke_test.py
+>>> tools/selfcheck_protocol.py
+timeout seq=42 has_header=1 has_tail=0 age_ms=1050.0
+PASS: selfcheck_protocol
+>>> tools/selfcheck_csv_roundtrip.py
+PASS: selfcheck_csv_roundtrip
+>>> tools/selfcheck_geometry.py
+PASS: selfcheck_geometry
+>>> tools/selfcheck_fixtures.py
+PASS: selfcheck_fixtures
+>>> tools/selfcheck_contract.py
+PASS: selfcheck_contract
+>>> tools/selfcheck_mqtt_contract.py
+selfcheck_mqtt_contract — MQTT 合同自检 (不上板、不连 Broker)
+
+[PASS] ALLOWED_SPEEDS = {0.5, 1.0, 2.0} 白名单正确
+[PASS] disconnect 使用 wait_for_publish(timeout=...)
+  OK  status online: all 5 required keys present
+  OK  status offline: all 2 required keys present
+[PASS] status online / offline payload 字段合规
+  OK  telemetry payload: all 10 required keys present
+[PASS] telemetry payload 字段合规
+  OK  alarm payload top-level: all 6 required keys present
+  OK  alarm.latest_point: all 4 required keys present
+[PASS] alarm payload 字段合规
+  OK  will payload: all 2 required keys present
+  OK  will payload direct: all 2 required keys present
+[PASS] will payload 字段合规
+[PASS] CmdDispatcher 白名单与日志格式合规
+[PASS] Topic 命名合规: lidar/{node_id}/...
+
+PASS: selfcheck_mqtt_contract — all contract checks passed
+>>> tools/selfcheck_replay_alarm.py
+selfcheck_replay_alarm - alarm state-change verification
+
+[PASS] transient alarm: 0->3->0 triggers 2 publishes
+[PASS] sustained alarm: 3->3->3 no duplicate
+[PASS] alert level change: 3->5 triggers publish
+[PASS] estimated flag (0x08) does not affect alert detection
+[PASS] many points same frame: all state changes captured
+[PASS] replay point-by-point: 0->0->7->7->0->0 triggers 2 edge changes
+
+PASS: selfcheck_replay_alarm - all alarm edge detection tests passed
+>>> tools/selfcheck_core.py
+selfcheck_core — core 业务计算自检 (不上板、不连 Broker)
+
+[PASS] compute_min_distance: empty input -> None
+[PASS] compute_min_distance: normal points
+[PASS] compute_sector_summary: 4-sector distribution correct
+[PASS] sector boundary wrap: 350° and 10° both go to Front
+[PASS] compute_alarm_state: status mask correct, ESTIMATED ignored
+[PASS] build_telemetry_dict: all required fields present
+[PASS] compute_device_summary: all fields correct
+
+PASS: selfcheck_core — all core business calculation tests passed
+>>> tools/selfcheck_input.py
+selfcheck_input — 输入层自检 (不上板、不连 CAN 硬件)
+
+[PASS] InputAdapter base class exists with required protocol
+[PASS] CsvReplaySource conforms to InputAdapter protocol
+[PASS] SerialCanSource is a reserved stub, not pretending to be done
+[PASS] open_bus correctly rejects on Windows
+[PASS] live virtual backend opens without CAN hardware
+
+PASS: selfcheck_input — input layer adapter verification passed
+>>> tools/selfcheck_output.py
+selfcheck_output — 输出层 adapter 自检 (不上板、不连 Broker)
+
+[PASS] OutputAdapter base protocol exists
+[PASS] CsvPointWriter adapter writes CSV and summary
+[PASS] LogOutputAdapter emits structured summary
+[PASS] MqttOutput adapter boundary exists
+
+PASS: selfcheck_output — output adapter verification passed
+>>> tools/selfcheck_windows_launcher.py
+selfcheck_windows_launcher - Windows replay launcher
+
+[PASS] Windows launcher defaults to replay and can build explicit live CAN commands
+
+PASS: selfcheck_windows_launcher
+PASS: selfcheck_all
+PS LOCAL_USER_HOME\Desktop\雷达\LADAR2> powershell -ExecutionPolicy Bypass -File .\tools\mqtt_closed_loop.ps1
+
+>>> Step 0: Check Python environment
+  INFO  Python: Python 3.12.10
+  PASS  paho-mqtt installed
+
+>>> Step 1: Locate Mosquitto tools
+  PASS  mosquitto: C:\Program Files\mosquitto\mosquitto.exe
+  PASS  mosquitto_pub: C:\Program Files\mosquitto\mosquitto_pub.exe
+  PASS  mosquitto_sub: C:\Program Files\mosquitto\mosquitto_sub.exe
+
+>>> Step 2: Check Mosquitto broker
+  PASS  Broker listening on localhost:1883
+
+>>> Step 3: Start subscriber
+  INFO  Sub log:   LOCAL_USER_HOME\Desktop\雷达\LADAR2\docs\mqtt_plugin_refactor\phase_b_sub_log.txt
+  INFO  Smoke log: LOCAL_USER_HOME\Desktop\雷达\LADAR2\docs\mqtt_plugin_refactor\phase_b_smoke_test_log.txt
+  PASS  Subscriber started (PID: 29364)
+
+>>> Step 4: Run mqtt_smoke_test.py (auto-exit in 10s)
+  INFO  Smoke test started (PID: 37448, duration=15s)
+  INFO  Waiting for connect+status+telemetry...
+  PASS  Status online confirmed in subscriber log
+
+>>> Step 5: Send ping commands
+  INFO  Sent: ping req_id=t01
+  INFO  Sent: ping req_id=t02
+
+>>> Step 6: Wait for smoke test to exit
+  PASS  Smoke test finished (exit: 0)
+
+>>> Step 7: Check logs
+
+  --- Smoke test stderr ---
+LOCAL_USER_HOME\Desktop\雷达\LADAR2\mqtt_smoke_test.py:155: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  client = mqtt.Client(client_id=args.client_id, protocol=mqtt.MQTTv311)
+
+
+  --- Smoke test log ---
+MQTT 烟雾测试 — broker=localhost:1883 client_id=ladar2_smoke_test
+
+[OK] 已连接 MQTT broker (rc=0)
+[PUB] status → lidar/01/status: {"device_id": "lidar-01", "state": "online", "mode": "live", "version": "1.0.0", "ts": 1778252923930}
+[SUB] 已订阅 lidar/01/cmd
+[PUB] 消息已确认 mid=1
+[PUB] telemetry → lidar/01/telemetry: {"device_id": "lidar-01", "mode": "live", "ts": 1778252924230, "point_count": 42, "sweep_point_count": 18, "min_distance_cm": 15, "min_distance_angle_deg": 90.5, "latest_quality": 12, "latest_status": 0, "reassembly": {"ok": 100, "timeout": 0, "overwrite_a": 0, "overwrite_b": 0, "pending": 0}}
+
+================================================================
+  最小闭环已就绪。请在另一个终端发送命令验证:
+    mosquitto_pub -t 'lidar/01/cmd' -m '{"cmd":"ping"}' -q 1
+================================================================
+
+等待命令中... (15s 后自动退出)
+[PUB] 消息已确认 mid=3
+[CMD] ← topic=lidar/01/cmd qos=1 payload={"cmd": "ping", "req_id": "t01"}
+[CMD] ← topic=lidar/01/cmd qos=1 payload={"cmd": "ping", "req_id": "t02"}
+(duration reached, exiting)
+
+正在退出...
+[PUB] status offline → lidar/01/status: {"device_id": "lidar-01", "state": "offline"}
+[PUB] 消息已确认 mid=4
+[OK] 正常断开连接
+[OK] 烟雾测试结束
+
+
+  PASS  Connected to broker
+  PASS  Status online published
+  PASS  Telemetry published
+  PASS  Status offline published
+  PASS  Cmd t01 received
+  PASS  Cmd t02 received
+  PASS  Clean exit
+
+  --- Subscriber log (last 30 lines) ---
+lidar/01/status {"device_id": "lidar-01", "state": "online", "mode": "live", "version": "1.0.0", "ts": 1778252923930}
+lidar/01/telemetry {"device_id": "lidar-01", "mode": "live", "ts": 1778252924230, "point_count": 42, "sweep_point_count": 18, "min_distance_cm": 15, "min_distance_angle_deg": 90.5, "latest_quality": 12, "latest_status": 0, "reassembly": {"ok": 100, "timeout": 0, "overwrite_a": 0, "overwrite_b": 0, "pending": 0}}
+lidar/01/cmd {"cmd":"ping","req_id":"t01"}
+lidar/01/cmd {"cmd":"ping","req_id":"t02"}
+lidar/01/status {"device_id": "lidar-01", "state": "offline"}
+  PASS  Sub: status online
+  PASS  Sub: telemetry
+  PASS  Sub: cmd t01
+  PASS  Sub: cmd t02
+  PASS  Sub: status offline
+
+=== PASS: MQTT closed-loop verified (Phase B) ===
+
+  Logs: LOCAL_USER_HOME\Desktop\雷达\LADAR2\docs\mqtt_plugin_refactor\phase_b_smoke_test_log.txt , LOCAL_USER_HOME\Desktop\雷达\LADAR2\docs\mqtt_plugin_refactor\phase_b_sub_log.txt

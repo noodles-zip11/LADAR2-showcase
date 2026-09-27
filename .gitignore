@@ -1,0 +1,7 @@
+.idea/
+.vscode/
+build/
+__pycache__/
+*.py[cod]
+.codex_tmp_video/
+automation_outputs/

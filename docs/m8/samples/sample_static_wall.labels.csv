@@ -1,0 +1,4 @@
+start_host_rx_time_us,end_host_rx_time_us,label,comment
+0,800000,wall,stable synthetic wall-like points
+900000,900000,suspect_anomaly,synthetic low-quality long-distance point
+1000000,1100000,wall,stable synthetic wall-like points after anomaly

@@ -1,0 +1,4 @@
+[MQTT] 异步连接 localhost:1883 ...
+[MQTT] 已连接 broker localhost:1883
+加载回放 CSV: LOCAL_USER_HOME\Desktop\雷达\LADAR2\docs\m4\data\can_distance_v2_sample.csv
+[MQTT] 命令白名单已注册: ping, pause_replay, resume_replay, set_replay_speed

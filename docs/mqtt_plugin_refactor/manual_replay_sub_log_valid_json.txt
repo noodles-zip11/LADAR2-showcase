@@ -1,0 +1,14 @@
+lidar/01/status {"device_id": "lidar-01", "state": "offline"}
+lidar/01/status {"device_id": "lidar-01", "state": "online", "mode": "replay", "version": "1.0.0", "ts": 1777979407118}
+lidar/01/status {"device_id": "lidar-01", "state": "online", "mode": "replay", "version": "1.0.0", "ts": 1777979407118}
+lidar/01/telemetry {"device_id": "lidar-01", "mode": "replay", "ts": 1777979407120, "point_count": 1, "sweep_point_count": 0, "min_distance_cm": 63, "min_distance_angle_deg": 24.37, "latest_quality": 255, "latest_status": 8, "reassembly": {"ok": "8", "timeout": "0", "overwrite_a": "0", "overwrite_b": "0", "pending": "0"}, "replay_progress_pct": 0.0}
+lidar/01/telemetry {"device_id": "lidar-01", "mode": "replay", "ts": 1777979409238, "point_count": 8, "sweep_point_count": 8, "min_distance_cm": 63, "min_distance_angle_deg": 24.37, "latest_quality": 255, "latest_status": 8, "reassembly": {"ok": "8", "timeout": "0", "overwrite_a": "0", "overwrite_b": "0", "pending": "0"}, "replay_progress_pct": 100.0}
+lidar/01/cmd {"cmd":"ping","req_id":"r01"}
+lidar/01/cmd {"cmd":"pause_replay","req_id":"r02"}
+lidar/01/cmd {"cmd":"resume_replay","req_id":"r03"}
+lidar/01/telemetry {"device_id": "lidar-01", "mode": "replay", "ts": 1777979411247, "point_count": 8, "sweep_point_count": 8, "min_distance_cm": 63, "min_distance_angle_deg": 24.37, "latest_quality": 255, "latest_status": 8, "reassembly": {"ok": "8", "timeout": "0", "overwrite_a": "0", "overwrite_b": "0", "pending": "0"}, "replay_progress_pct": 100.0}
+lidar/01/cmd {"cmd":"set_replay_speed","speed":2.0,"req_id":"r04"}
+lidar/01/cmd {"cmd":"not_allowed","req_id":"r05"}
+lidar/01/telemetry {"device_id": "lidar-01", "mode": "replay", "ts": 1777979413268, "point_count": 8, "sweep_point_count": 8, "min_distance_cm": 63, "min_distance_angle_deg": 24.37, "latest_quality": 255, "latest_status": 8, "reassembly": {"ok": "8", "timeout": "0", "overwrite_a": "0", "overwrite_b": "0", "pending": "0"}, "replay_progress_pct": 100.0}
+lidar/01/telemetry {"device_id": "lidar-01", "mode": "replay", "ts": 1777979415311, "point_count": 8, "sweep_point_count": 8, "min_distance_cm": 63, "min_distance_angle_deg": 24.37, "latest_quality": 255, "latest_status": 8, "reassembly": {"ok": "8", "timeout": "0", "overwrite_a": "0", "overwrite_b": "0", "pending": "0"}, "replay_progress_pct": 100.0}
+lidar/01/telemetry {"device_id": "lidar-01", "mode": "replay", "ts": 1777979417334, "point_count": 8, "sweep_point_count": 8, "min_distance_cm": 63, "min_distance_angle_deg": 24.37, "latest_quality": 255, "latest_status": 8, "reassembly": {"ok": "8", "timeout": "0", "overwrite_a": "0", "overwrite_b": "0", "pending": "0"}, "replay_progress_pct": 100.0}

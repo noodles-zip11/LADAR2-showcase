@@ -1,0 +1,2 @@
+elapsed_s,total_points,interval_point_rate_hz,reassembly_ok,reassembly_timeout,reassembly_overwrite_a,reassembly_overwrite_b,reassembly_pending
+0.0,8,1600.000,8,0,0,0,0

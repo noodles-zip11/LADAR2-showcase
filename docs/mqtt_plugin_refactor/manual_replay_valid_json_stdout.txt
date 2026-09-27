@@ -1,0 +1,9 @@
+[MQTT] 异步连接 localhost:1883 ...
+[MQTT] 已连接 broker localhost:1883
+加载回放 CSV: LOCAL_USER_HOME\Desktop\雷达\LADAR2\docs\m4\data\can_distance_v2_sample.csv
+[MQTT] 命令白名单已注册: ping, pause_replay, resume_replay, set_replay_speed
+MQTT cmd: cmd=ping req_id=r01 result=OK
+MQTT cmd: cmd=pause_replay req_id=r02 result=OK (already paused)
+MQTT cmd: cmd=resume_replay req_id=r03 result=OK
+MQTT cmd: cmd=set_replay_speed req_id=r04 result=OK speed=2
+MQTT cmd: cmd=not_allowed req_id=r05 result=REJECTED unknown_command
